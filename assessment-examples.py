@@ -85,7 +85,13 @@ print(three({'hello':'hola', 'thank you':'gracias'}))
     # four(-10) → 5
 
 def four(number):
-    pass
+    divisors = []
+    for num in range(1,number):
+        if number%num == 0:
+            divisors.append(num)
+    divisors.sort()
+    return divisors[-1]
+print(four(24))
 
     # <QUESTION 5>
 
@@ -98,4 +104,7 @@ def four(number):
     # four('hello world!') → ' '
 
 def five(chars):
-    pass
+    char = sorted(chars)
+    return char[0]
+
+print(five('hello world!'))
