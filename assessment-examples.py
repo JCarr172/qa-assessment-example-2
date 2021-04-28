@@ -12,7 +12,12 @@
 	# one("punctation, or something?", " ,?") → "punctuation__or_something_"
 
 def one(word, chars):
-    pass
+    new_word = word
+    for char in range (0,len(chars)):
+        new_word = new_word.replace(chars[char],'_')
+    return new_word
+words = one("punctation, or something?", " ,?")
+print(words)
 
 	# <QUESTION 2>
 
@@ -30,7 +35,14 @@ def one(word, chars):
     # There are 86,400 seconds in a day, and 3600 seconds in an hour
 
 def two(total_seconds):
-    pass
+    days = total_seconds//86400
+    hours = (total_seconds-86400*days)//3600
+    minutes = (total_seconds - 86400*days - 3600*hours)//60
+    seconds = total_seconds - 86400*days - 3600*hours - 60*minutes
+    time = (days, hours, minutes, seconds)
+    return time
+
+print(two(345743))
 
 	# <QUESTION 3>
 
@@ -47,7 +59,17 @@ def two(total_seconds):
     # Dictionaries have methods that can be used to get their keys, values, or items
 
 def three(dictionary):
+    value = dictionary.values()
+    key = dictionary.keys()
+    print(key)
+    new_dict = {}
+    for i in range(0,len(value)):
+        print(key[i])
+        d = {key[i]:value[i]}
+        new_dict.update(d)
     pass
+
+print(three({'hello':'hola', 'thank you':'gracias'}))
 
     # <QUESTION 4>
 
