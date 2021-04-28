@@ -59,15 +59,14 @@ print(two(345743))
     # Dictionaries have methods that can be used to get their keys, values, or items
 
 def three(dictionary):
-    value = dictionary.values()
-    key = dictionary.keys()
-    print(key)
+    value = list(dictionary.values())
+    key = list(dictionary.keys())
     new_dict = {}
     for i in range(0,len(value)):
         print(key[i])
-        d = {key[i]:value[i]}
+        d = {value[i]:key[i]}
         new_dict.update(d)
-    pass
+    return new_dict
 
 print(three({'hello':'hola', 'thank you':'gracias'}))
 
